@@ -144,3 +144,4 @@ cython_debug/
 .idea/vcs.xml
 tours/data.py
 tours/templates/tours/base.html
+/.idea/

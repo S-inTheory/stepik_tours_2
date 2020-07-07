@@ -2,7 +2,12 @@
   <dictionary name="livsi">
     <words>
       <w>ixid</w>
+      <w>nightsmax</w>
+      <w>nightsmin</w>
+      <w>pricemax</w>
+      <w>pricemin</w>
       <w>stepik</w>
+      <w>tourcount</w>
     </words>
   </dictionary>
 </component>

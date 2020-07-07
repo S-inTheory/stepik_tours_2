@@ -1,5 +1,0 @@
-class Author(models.Model):
-    first_name = models.CharField(max_length=30, verbose_name='имя')
-    last_name = models.CharField(max_length=30, verbose_name='фамилия')
-    birth_date = models.DateField(verbose_name='дата рождения')
-    city = models.CharField(max_length=30, verbose_name='город')

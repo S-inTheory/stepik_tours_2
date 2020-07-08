@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'stepik_tours',
     'tours',
-    'stepik_tours',
 ]
 
 MIDDLEWARE = [

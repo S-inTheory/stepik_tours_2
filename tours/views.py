@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponseNotFound, HttpResponseServerError
-import stepik_tours_2.tours.data as data
+import tours.data as data
 import random
 
 

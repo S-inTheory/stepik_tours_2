@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-3">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" data-test="logo" href="/">{% block navbar-brand %}{% endblock %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" data-test="navigation">
+                {% block navbar-nav %}
+                {% endblock %}
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="display-5 mt-4">{% block display-5 %}{% endblock %}</h1>
+    <p class="mb-4">{% block mb-4 %}{% endblock %}</p>
+
+    <h1 class="display-3 mt-4" data-test="title">{% block display-3 %}{% endblock %}</h1>
+    <!-- HERO -->
+
+    <div class="antijumbo">
+        {% block antijumbo %}
+        {% endblock %}
+    </div>
+
+
+    <div class="other">
+        {% block other %}{% endblock %}
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="row mt-5" data-test="cards">
+        {% block row %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,7 +1,6 @@
 
 import os
 
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -106,5 +105,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
-
-django_heroku.settings(locals())

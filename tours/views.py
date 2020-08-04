@@ -8,13 +8,13 @@ from tours import data
 
 
 class MainView(View):
-    template_name = 'index.html'
 
     def get(self, request, *args, **kwargs):
-        random_tours = random.sample(list(data.tours.items()), 6)
+        tours_quantity = 6
+        random_tours = random.sample(list(data.tours.items()), tours_quantity)
 
         return render(
-            request, r'tours/index.html', {'title': data.title,
+            request, 'tours/index.html', {'title': data.title,
                                            'description': data.description,
                                            'subtitle': data.subtitle,
                                            'tours': dict(random_tours),
@@ -22,25 +22,24 @@ class MainView(View):
 
 
 class DepartureView(View):
-    template_name = 'departure.html'
 
     def get(self, request, departure: str, *args, **kwargs):
-        tourcount = 0
+        tour_count = 0
         price_list = []
         nights_list = []
         for number, tour in data.tours.items():
             if departure == tour['departure']:
                 price_list.append(tour['price'])
                 nights_list.append(tour['nights'])
-                tourcount += 1
+                tour_count += 1
 
         return render(
-            request, r'tours/departure.html', {'title': data.title,
+            request, 'tours/departure.html', {'title': data.title,
                                                'tours': data.tours,
                                                'departures': data.departures,
                                                'from': data.departures[departure][3:],
                                                'departure': departure,
-                                               'tourcount': tourcount,
+                                               'tour_count': tour_count,
                                                'pricemin': min(price_list),
                                                'pricemax': max(price_list),
                                                'nightsmin': min(nights_list),
@@ -48,11 +47,10 @@ class DepartureView(View):
 
 
 class TourView(View):
-    template_name = "tour.html"
 
     def get(self, request, id: int):
         return render(
-            request, r'tours/tour.html',
+            request, 'tours/tour.html',
             {'title': data.title,
              'tours': data.tours[id],
              'departures': data.departures,
